@@ -195,6 +195,7 @@ function createUnityInstance(canvas, config, onProgress) {
 	
 	if(/iPhone|iPad|iPod|Android/i.test(navigator.userAgent))
 	{
+		console.log("Welcome to mobile legends");
 		return {
 	  width: screen.width,
 	  height: screen.height,
@@ -218,10 +219,11 @@ function createUnityInstance(canvas, config, onProgress) {
     };
 	} else 
 	{
+		console.log("Welcome to pc master race");
+		console.log(screen.width);
 		return {
-	  className: "unityContainer-desktop",
-	  width: 1024,
-	  height: 576,
+	  width: 800,
+	  height: 600,
       userAgent: ua.trim(),
       browser: browser,
       browserVersion: browserVersion,
