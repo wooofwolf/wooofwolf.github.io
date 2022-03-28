@@ -192,17 +192,12 @@ function createUnityInstance(canvas, config, onProgress) {
 
     var hasThreads = typeof SharedArrayBuffer !== 'undefined';
     var hasWasm = typeof WebAssembly === "object" && typeof WebAssembly.compile === "function";
-    return {
-		if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent) {
-		
-		  width: screen.width,
-		  height: screen.height,
-		}
-		else
-		{
-		  width: 1280;
-          height: 720;
-	  }
+	
+	if(/Mobile|Android|iP(ad|hone)/.test(navigator.appVersion))
+	{
+		return {
+	  width: screen.width,
+	  height: screen.height,
       userAgent: ua.trim(),
       browser: browser,
       browserVersion: browserVersion,
@@ -221,6 +216,32 @@ function createUnityInstance(canvas, config, onProgress) {
         return wasmMemory && wasmMemory.buffer instanceof SharedArrayBuffer;
       })(),
     };
+	} else 
+	{
+		return {
+	  width: 1280,
+	  height: 720,
+      userAgent: ua.trim(),
+      browser: browser,
+      browserVersion: browserVersion,
+      mobile: /Mobile|Android|iP(ad|hone)/.test(navigator.appVersion),
+      os: os,
+      osVersion: osVersion,
+      gpu: gpu,
+      language: navigator.userLanguage || navigator.language,
+      hasWebGL: glVersion,
+      hasCursorLock: !!document.body.requestPointerLock,
+      hasFullscreen: !!document.body.requestFullscreen,
+      hasThreads: hasThreads,
+      hasWasm: hasWasm,
+      hasWasmThreads: (function() {
+        var wasmMemory = hasWasm && hasThreads && new WebAssembly.Memory({"initial": 1, "maximum": 1, "shared": true});
+        return wasmMemory && wasmMemory.buffer instanceof SharedArrayBuffer;
+      })(),
+    };
+	}
+	
+    
   })();
 
   function errorHandler(message, filename, lineno) {
