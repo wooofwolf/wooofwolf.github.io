@@ -220,10 +220,9 @@ function createUnityInstance(canvas, config, onProgress) {
 	} else 
 	{
 		console.log("Welcome to pc master race");
-		console.log(screen.width);
 		return {
-	  width: 800,
-	  height: 600,
+	  width: screen.width,
+	  height: screen.height,
       userAgent: ua.trim(),
       browser: browser,
       browserVersion: browserVersion,
