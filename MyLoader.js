@@ -195,6 +195,7 @@ function createUnityInstance(canvas, config, onProgress) {
 	
 	if(/iPhone|iPad|iPod|Android/i.test(navigator.userAgent))
 	{
+		console.log("Welcome to mobile legends");
 		return {
 	  width: screen.width,
 	  height: screen.height,
@@ -218,6 +219,7 @@ function createUnityInstance(canvas, config, onProgress) {
     };
 	} else 
 	{
+		console.log("Welcome to pc master race");
 		return {
 	  width: 1280,
 	  height: 720,
