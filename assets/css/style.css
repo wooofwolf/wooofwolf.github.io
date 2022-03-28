@@ -62,7 +62,7 @@ a {
 /* this element makes sure we preserve 16:9 aspect ratio */
 
 .aspect {
-  margin-top: calc(100% / 800 * 600);
+  margin-top: calc(100% / 1280 * 720);
 }
 
 /* progress bar */
