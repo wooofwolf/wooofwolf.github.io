@@ -81,8 +81,8 @@
         // and default/override low DPI mode on mobile browsers.
         config.devicePixelRatio = 1;
         unityShowBanner('WebGL builds are not supported on mobile devices.');
-		canvas.style.width = screen.width + "px";
-		canvas.style.height = "560px";
+		canvas.style.width = screen.height + "px";
+		canvas.style.height = screen.width + "px";
       } else {
         canvas.style.width = "1280px";
         canvas.style.height = "720px";
