@@ -192,7 +192,7 @@ function createUnityInstance(canvas, config, onProgress) {
 
     var hasThreads = typeof SharedArrayBuffer !== 'undefined';
     var hasWasm = typeof WebAssembly === "object" && typeof WebAssembly.compile === "function";
-	
+    
 	if(/iPhone|iPad|iPod|Android/i.test(navigator.userAgent))
 	{
 		console.log("Welcome to mobile legends");
@@ -243,7 +243,6 @@ function createUnityInstance(canvas, config, onProgress) {
     };
 	}
 	
-    
   })();
 
   function errorHandler(message, filename, lineno) {

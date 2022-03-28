@@ -26,7 +26,7 @@ a {
 .webgl-wrapper {
   display: inline-block;
   width: 100%;
-  /*max-width: 1280px; remove this line for full width */
+  max-width: 1280px; /* remove this line for full width */
   position: relative;
 }
 
@@ -40,10 +40,6 @@ a {
 
 #unityContainer {
   width: 100%; height: 100%;
-}
-
-#unityContainer-desktop {
-  width: 50%; height: 50%;
 }
 
 .webgl-content * {
@@ -62,7 +58,7 @@ a {
 /* this element makes sure we preserve 16:9 aspect ratio */
 
 .aspect {
-  margin-top: calc(100% / 800 * 600);
+  margin-top: calc(100% / 1280 * 720);
 }
 
 /* progress bar */
