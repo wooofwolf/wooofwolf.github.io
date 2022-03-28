@@ -219,7 +219,7 @@ function createUnityInstance(canvas, config, onProgress) {
 	} else 
 	{
 		return {
-	  className: "unityContainer-desktop";
+	  className: "unityContainer-desktop",
 	  width: 1024,
 	  height: 576,
       userAgent: ua.trim(),
