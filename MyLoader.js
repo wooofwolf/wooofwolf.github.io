@@ -193,8 +193,16 @@ function createUnityInstance(canvas, config, onProgress) {
     var hasThreads = typeof SharedArrayBuffer !== 'undefined';
     var hasWasm = typeof WebAssembly === "object" && typeof WebAssembly.compile === "function";
     return {
-      width: screen.width,
-      height: screen.height,
+		if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent) {
+		
+		  width: screen.width,
+		  height: screen.height,
+		}
+		else
+		{
+		  width: 1280;
+          height: 720;
+	  }
       userAgent: ua.trim(),
       browser: browser,
       browserVersion: browserVersion,
